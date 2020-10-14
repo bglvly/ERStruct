@@ -5,7 +5,7 @@
     <param.email>xuyy@hku.hk</param.email>
     <param.company>The University of Hong Kong</param.company>
     <param.summary>A toolbox for inferring number of sub-populations based on genotype information</param.summary>
-    <param.description>Detail can be found in the reference paper, ERStruct: An Eigenvalue Ratio Approach to Inferring Population Structure in Sequencing Data</param.description>
+    <param.description>Details can be found in the reference paper, ERStruct: An Eigenvalue Ratio Approach to Inferring Population Structure in Sequencing Data</param.description>
     <param.screenshot />
     <param.version>1.0</param.version>
     <param.output>${PROJECT_ROOT}\ERStruct.mltbx</param.output>
@@ -64,9 +64,11 @@
       <file>${PROJECT_ROOT}\ERStruct</file>
     </fileset.rootdir>
     <fileset.rootfiles>
-      <file>${PROJECT_ROOT}\ERStruct\Kcompute_tmp.m</file>
-      <file>${PROJECT_ROOT}\ERStruct\Li_test.m</file>
-      <file>${PROJECT_ROOT}\ERStruct\Patterson_l_all.m</file>
+      <file>${PROJECT_ROOT}\ERStruct\Eigens.m</file>
+      <file>${PROJECT_ROOT}\ERStruct\ERStruct.m</file>
+      <file>${PROJECT_ROOT}\ERStruct\Null_dist.m</file>
+      <file>${PROJECT_ROOT}\ERStruct\test_chr21.mat</file>
+      <file>${PROJECT_ROOT}\ERStruct\test_chr22.mat</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded>
