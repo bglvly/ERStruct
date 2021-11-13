@@ -12,4 +12,4 @@ ERStruct(2504, '.', ["test_chr21","test_chr22"], 10000, 1e-4, 10)
 
 ## Othehr Details
 Please refer to our paper
-> *ERStruct: An Eigenvalue Ratio Approach to Inferring Population Structure in Sequencing Data*
+> *An Eigenvalue Ratio Approach to Inferring Population Structure from Large-Scale Sequencing Data*
