@@ -4,8 +4,10 @@
     <param.authnamewatermark>Xu Yuyang</param.authnamewatermark>
     <param.email>xuyy@hku.hk</param.email>
     <param.company>The University of Hong Kong</param.company>
-    <param.summary>A toolbox for inferring number of sub-populations based on genotype information</param.summary>
-    <param.description>Details can be found in the reference paper, ERStruct: An Eigenvalue Ratio Approach to Inferring Population Structure in Sequencing Data</param.description>
+    <param.summary>A toolbox for inferring number of top informative PCs that capture population structure based on genotype information</param.summary>
+    <param.description>Details can be found in the reference paper, 
+
+An Eigenvalue Ratio Approach to Inferring Population Structure from Whole Genome Sequencing Data</param.description>
     <param.screenshot />
     <param.version>1.0</param.version>
     <param.output>${PROJECT_ROOT}\ERStruct.mltbx</param.output>
@@ -66,14 +68,12 @@
     <fileset.rootfiles>
       <file>${PROJECT_ROOT}\ERStruct\Eigens.m</file>
       <file>${PROJECT_ROOT}\ERStruct\ERStruct.m</file>
-      <file>${PROJECT_ROOT}\ERStruct\Null_dist.m</file>
+      <file>${PROJECT_ROOT}\ERStruct\GOE_L12_sim.m</file>
       <file>${PROJECT_ROOT}\ERStruct\test_chr21.mat</file>
       <file>${PROJECT_ROOT}\ERStruct\test_chr22.mat</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
-    <fileset.depfun.excluded>
-      <file>${PROJECT_ROOT}\Li_test.m</file>
-    </fileset.depfun.excluded>
+    <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
       <file location="${MATLAB_ROOT}\bin\Program\Gene" name="ERStruct.mltbx" optional="false">D:\Software\MATLAB R2018a\bin\Program\Gene\ERStruct.mltbx</file>
