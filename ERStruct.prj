@@ -33,7 +33,9 @@
 % All files matching a pattern in all subfolders of the toolbox folder:
 % **/*.bak
 %
-test*.mat</param.exclude.filters>
+*.zip
+README*
+Example*</param.exclude.filters>
     <param.exclude.pcodedmfiles>true</param.exclude.pcodedmfiles>
     <param.examples />
     <param.demosxml />

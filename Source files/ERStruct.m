@@ -1,4 +1,4 @@
-function K = ERStruct(n, path, filename, rep, alpha, Kc, core_num)
+function K_hat = ERStruct(n, path, filename, rep, alpha, Kc, core_num)
 %% (Main program) Compute the estimated number of top informative PCs
 
 %% Data files requirements
@@ -22,7 +22,7 @@ function K = ERStruct(n, path, filename, rep, alpha, Kc, core_num)
 %                 parallel computing. 
 
 %% Return 
-% K           Estimated number of top PCs
+% K_hat       Estimated number of top PCs
 
 %% Examples
 % Using example data files inside the toolbox folder
@@ -46,27 +46,27 @@ end
 
 disp('Testing...')
 
-K = 0;
+K_tmp = 0;
 K_hat = 0;
 n_prime = n;
 stats = [0; eigens(2:end-1) ./ eigens(1:end-2)];
 xi_GOE_s = zeros(1, Kc);
 
-while K < Kc
-    K = K + 1;
+while K_tmp < Kc
+    K_tmp = K_tmp + 1;
     n_prime = n_prime - 1;
     
-    a_p_hat = sum(eigens(K:end-1)) / n_prime;
-    b_p_hat = p/n_prime * (sum(eigens(K:end-1).^2) / n_prime - a_p_hat^2);
+    a_p_hat = sum(eigens(K_tmp:end-1)) / n_prime;
+    b_p_hat = p/n_prime * (sum(eigens(K_tmp:end-1).^2) / n_prime - a_p_hat^2);
 
     xi_GOE_rep = (GOE_L12_dist(2,:) * sqrt(b_p_hat / p) + a_p_hat) ./ ...
             (GOE_L12_dist(1,:) * sqrt(b_p_hat / p) + a_p_hat);
     xi_GOE_rep = sort(xi_GOE_rep);
-    xi_GOE_s(K) = xi_GOE_rep(ceil(length(xi_GOE_rep)*alpha)); 
+    xi_GOE_s(K_tmp) = xi_GOE_rep(ceil(length(xi_GOE_rep)*alpha)); 
     
-    if K_hat == 0 && stats(K+1) > xi_GOE_s(K) % jump above threshold
-        K_hat = K;
-    elseif K_hat ~= 0 && stats(K+1) <= xi_GOE_s(K_hat) % fake K_hat
+    if K_hat == 0 && stats(K_tmp+1) > xi_GOE_s(K_tmp) % jump above threshold
+        K_hat = K_tmp;
+    elseif K_hat ~= 0 && stats(K_tmp+1) <= xi_GOE_s(K_hat) % fake K_hat
         K_hat = 0;
     end
 end
