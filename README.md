@@ -11,5 +11,4 @@ ERStruct(2504, '.', ["test_chr21","test_chr22"], 10000, 1e-4)
 ```
 
 ## Other Details
-Please refer to our paper
-> [*An Eigenvalue Ratio Approach to Inferring Population Structure from Whole Genome Sequencing Data*](http://doi.org/10.1111/biom.13691).
+Please refer to our paper [*An Eigenvalue Ratio Approach to Inferring Population Structure from Whole Genome Sequencing Data*](http://doi.org/10.1111/biom.13691).
