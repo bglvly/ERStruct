@@ -11,7 +11,7 @@ if length(filename) > 1 && core_num > 1
     parpool(core_num);
     parfor i = 1:length(filename)
         disp(['Processing file ', num2str(i), '...'])
-        C_struct = load([path, '\', char(filename(i)), '.mat']);
+        C_struct = load([path, '/', char(filename(i)), '.mat']);
         C = getfield(C_struct, filename(i));
         C_struct = [];
 
@@ -35,7 +35,7 @@ if length(filename) > 1 && core_num > 1
 else
     for i = 1:length(filename)
         disp(['Processing file ', num2str(i), '...'])
-        C_struct = load([path, '\', char(filename(i)), '.mat']);
+        C_struct = load([path, '/', char(filename(i)), '.mat']);
         C = getfield(C_struct, char(filename(i)));
         C_struct = [];
 
